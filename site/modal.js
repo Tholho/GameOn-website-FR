@@ -1,10 +1,11 @@
 function editNav() {
-  var x = document.getElementById("myTopnav"); 
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+	var x = document.getElementById("myTopnav"); 
+	if (x.className === "topnav") {
+		x.className += " responsive";
+	} 
+	else {
+		x.className = "topnav";
+	}
 } 
 
 // DOM Elements
@@ -25,7 +26,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+	modalbg.style.display = "block";
 }
 
 // Close modal event
@@ -33,45 +34,45 @@ modalExitBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 
 // Close modal function 
 function closeModal() {
-    modalbg.style.display = "none";
+	modalbg.style.display = "none";
 }
 
 // submit modal form event
 formElem.addEventListener("submit", function(event) {
-//	validate();
-  event.preventDefault();
+	//	validate();
+	event.preventDefault();
 	if (submittedAlready) {
-	validate();
+		validate();
 	}
-  let validForm = true;
-  formData.forEach(formInput => {
-	  console.log(validForm + " validForm");
-	  if (validForm === false) {
-		  return;
-	  }
-	  let input = formInput.querySelector('input');
-	  let inputType = input.getAttribute("name");
-	  if (inputType == "location") {
-		  validForm = checkRadio(formInput);
-	  }
-	  else {
-	  	validForm = checkInput(input, inputType);
-	  }
-	  if (!validForm) {
-		  formInput.dataset.showerror = true;
-		  alert("Merci de bien vouloir compléter le formulaire");
-	  }
-	  else {
-		  formInput.dataset.showerror = false; 
-		  }
-  });
+	let validForm = true;
+	formData.forEach(formInput => {
+		console.log(validForm + " validForm");
+		if (validForm === false) {
+			return;
+		}
+		let input = formInput.querySelector('input');
+		let inputType = input.getAttribute("name");
+		if (inputType == "location") {
+			validForm = checkRadio(formInput);
+		}
+		else {
+			validForm = checkInput(input, inputType);
+		}
+		if (!validForm) {
+			formInput.dataset.showerror = true;
+			alert("Merci de bien vouloir compléter le formulaire");
+		}
+		else {
+			formInput.dataset.showerror = false; 
+		}
+	});
 
-  // catch one of them fails -> alert the user with a list of problematic inputs
+	// catch one of them fails -> alert the user with a list of problematic inputs
 
-  // else validate
-  if (validForm) {
-    validate();
-  }
+	// else validate
+	if (validForm) {
+		validate();
+	}
 })
 
 // confirms to the user that his form is valid and he's good to go.
@@ -80,9 +81,9 @@ function validate() {
 	const submittedClose = document.querySelector(".button.closeModal");
 	const submitted = document.querySelector(".submitted");
 	const thanks = document.querySelector(".thanks");
-//	console.log(contentModal.scrollHeight);
+	//	console.log(contentModal.scrollHeight);
 	const	modalBody = document.querySelector(".modal-body");
-//	let modalWidth = modalBody.clientWidth;
+	//	let modalWidth = modalBody.clientWidth;
 	let modalHeight = contentModal.scrollHeight;
 	let offsetX = modalSubmitBtn.offsetLeft;
 	let offsetY = modalSubmitBtn.offsetTop;
@@ -90,10 +91,10 @@ function validate() {
 	contentModal.style.justifyContent = "end";
 	submitted.style.display = "flex";
 	thanks.style.margin = (modalHeight - 40) / 2 + "px auto"; 
-//	contentModal.style.width = modalWidth + "px";
+	//	contentModal.style.width = modalWidth + "px";
 	contentModal.style.height = modalHeight + 1 + "px";
-//	submittedClose.style.left = offsetX + "px";
-//	submittedClose.style.top = offsetY + "px";
+	//	submittedClose.style.left = offsetX + "px";
+	//	submittedClose.style.top = offsetY + "px";
 	modalForm.style.display = "none";
 	submittedAlready = true;
 }
@@ -147,14 +148,14 @@ const	emailRgx= /^([\w]+[!#$%^&*_+-=]*)+[@]([\w]+[-]*)[\w]+[.][a-zA-Z]{2,3}$/;
 const	numRgx= /^[0-9]{1,2}/;
 
 function checkRegex(input, regextype) {
-  if (input.test(regextype)) {
-    alert("name is valid");
-  }
+	if (input.test(regextype)) {
+		alert("name is valid");
+	}
 }
 
 // regex check for first name and last name validity
 function  validateName(name) {
-  return nameRgx.test(name);
+	return nameRgx.test(name);
 }
 // regex check for email validity
 // regex WIP ^([\w]{1,}[-_]?)*[a-zA-Z]{1,}[@]([\w]+[!#$%^&*][.][a-zA-Z]{2,3}$
@@ -175,7 +176,7 @@ function	validateDOB(date) {
 	if (currentDate > userDate && userDate > reasonableDOB) {
 		valid = true;
 	}
-/*	if (date === null) {
+	/*	if (date === null) {
 		console.log("null");
 	}
 	if (date === NaN) {
@@ -183,7 +184,7 @@ function	validateDOB(date) {
 	}
 	console.log(valid);
 	console.log(userDate + " is date" + valid);
-*/
+	*/
 	return (valid);
 }
 
