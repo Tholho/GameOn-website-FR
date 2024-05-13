@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+	border: 1px solid black;
 }
 /* Landing Page */
 
@@ -34,8 +35,13 @@ img {
 }
 
 ul {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	background: white;
 	display: flex;
-	flex-flow: wrap;
+	flex-flow: wrap column;
 	justify-content: space-between;
 	margin-right: 30px;
 }
@@ -43,11 +49,16 @@ ul {
 .header-logo {
     float: left;
 }
+
 .main-navbar {
+	position: relative;
+}
+
+.main-navbar  ul {
     float: right;
 }
 
-.topnav a {
+.topnav li {
 	list-style: none;
     float: left;
     display: block;
@@ -84,16 +95,18 @@ ul {
         display: none;
     }
     .topnav a.icon {
-        float: right;
         display: block;
+		position: absolute;
+		right: 30px;
+		top: 20px;
     }
     .topnav.responsive {
         position: relative;
     }
     .topnav.responsive .icon {
         position: absolute;
-        right: 10px;
-        top: 0;
+		right: 30px;
+        top: 20px;
     }
     .topnav.responsive a {
         float: none;

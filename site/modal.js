@@ -37,6 +37,29 @@ function closeModal() {
 	modalbg.style.display = "none";
 }
 
+formData.forEach(formInput => {
+	formInput.addEventListener("change", (event) => {
+		let validForm = true;
+		if (validForm === false) {
+			return;
+		}
+		let input = formInput.querySelector('input');
+		let inputType = input.getAttribute("name");
+		if (inputType == "location") {
+			validForm = checkRadio(formInput);
+		}
+		else {
+			validForm = checkInput(input, inputType);
+		}
+		if (!validForm) {
+			formInput.dataset.showerror = true;
+		}
+		else {
+			formInput.dataset.showerror = false; 
+		}
+	});
+});
+
 // submit modal form event
 formElem.addEventListener("submit", function(event) {
 	//	validate();
@@ -141,7 +164,7 @@ function	checkRadio(formInput) {
 }
 
 //regex name that allows for single union, single quote and single space
-const 	nameRgx= /^([a-zA-Z]{1,}[-'\40]?)*[a-zA-Z]{1,}$/;
+const 	nameRgx= /^([a-zA-Z]+[-'\40]?)+[a-zA-Z]+$/;
 // regex for most common emails, does not support UTF8 format mails...
 const	emailRgx= /^([\w]+[!#$%^&*_+-=]*)+[@]([\w]+[-]*)[\w]+[.][a-zA-Z]{2,3}$/;
 // regex for numerical entry
@@ -170,7 +193,6 @@ function	validateDOB(date) {
 	const reasonableDOB = new Date('1900-01-01');
 	const age = currentDate.getFullYear() - userDate.getFullYear();
 	if (age < 13 && age >= 0) {
-		alert("L'utilisateur est trop jeune pour valider le formulaire");
 		return (valid);
 	}
 	if (currentDate > userDate && userDate > reasonableDOB) {
