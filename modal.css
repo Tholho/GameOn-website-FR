@@ -50,6 +50,9 @@ ul {
 
 .main-navbar  ul {
     float: right;
+}
+
+.main-navbar ul .responsive {
 	border: 2px solid black;
 	border-radius: 5%;
 }
