@@ -50,6 +50,8 @@ ul {
 
 .main-navbar  ul {
     float: right;
+	border: 2px solid black;
+	border-radius: 5%;
 }
 
 .topnav li {
