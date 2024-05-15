@@ -52,7 +52,7 @@ ul {
     float: right;
 }
 
-.main-navbar ul .responsive {
+.topnav.responsive ul {
 	border: 2px solid black;
 	border-radius: 5%;
 }
