@@ -18,13 +18,13 @@ const modalSubmitBtn = document.querySelector(".btn-submit");
 const modalForm = document.querySelector("form");
 const modalSubmitted = document.querySelector(".submitted");
 
-// tracking if form has been submitted already
+// Flag variable to track if form has been submitted already
 let submittedAlready = false;
 
-// launch modal event
+// Launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+// Launch modal form
 function launchModal() {
 	modalbg.style.display = "block";
 }
@@ -37,7 +37,7 @@ function closeModal() {
 	modalbg.style.display = "none";
 }
 
-//makes sure that form displays warning for invalid inputs as they're first entered by user
+// Makes sure that form displays warning for invalid inputs as they're first entered by user
 formData.forEach(formInput => {
 	formInput.addEventListener("change", (event) => {
 		let validForm = true;
@@ -61,7 +61,7 @@ formData.forEach(formInput => {
 	});
 });
 
-// submit modal form event
+// On submit, the form is checked for validation, and this calls most of the subprocessess
 formElem.addEventListener("submit", function(event) {
 	//	validate();
 	event.preventDefault();
@@ -96,7 +96,7 @@ formElem.addEventListener("submit", function(event) {
 	}
 })
 
-// confirms to the user that his form is valid and he's good to go.
+// Confirms to the user that his form is valid and he's good to go, also tweaks modal size
 function validate() {
 	const contentModal = document.querySelector(".content");
 	const submittedClose = document.querySelector(".button.closeModal");
@@ -115,7 +115,7 @@ function validate() {
 	submittedAlready = true;
 }
 
-// master regex function group
+// Main regex function group
 function	checkInput(input, inputType) {
 	const inputValue = input.value;
 	let	valid = false;
@@ -139,7 +139,7 @@ function	checkInput(input, inputType) {
 	return (valid);
 }
 
-// radios must all be verifid to ensure this part of form is valid
+// Radios must all be verifid to ensure this part of form is valid
 function	checkRadio(formInput) {
 	const radios = formInput.querySelectorAll('input[type="radio"]');
 	let valid = false;
@@ -151,22 +151,29 @@ function	checkRadio(formInput) {
 	return (valid);
 }
 
-//regex name that allows for single union, single quote and single space
+//////// REGEX LIST
+
+// Regex name that allows for single union, single quote and single space
 const 	nameRgx= /^([a-zA-Z]+[-'\40]?)+[a-zA-Z]+$/;
-// regex for most common emails, does not support UTF8 format mails...
+
+// Regex for most common emails, does not support UTF8 format mails...
 const	emailRgx= /^([\w]+[!#$%^&*_+-=]*)+[@]([\w]+[-]*)[\w]+[.][a-zA-Z]{2,3}$/;
-// regex for numerical entry
+
+// Regex for numerical entry
 const	numRgx= /^[0-9]{1,2}/;
 
-// regex check for first name and last name validity
+//////// FORM CHECKING FUNCTIONS
+
+// Regex check for first name and last name validity
 function  validateName(name) {
 	return nameRgx.test(name);
 }
 
-// regex check for email validity
+// Regex check for email validity
 function	validateEmail(email) {
 	return emailRgx.test(email)
 }
+
 // Date of birth validity verification following format
 function	validateDOB(date) {
 	let valid = false;
@@ -183,7 +190,7 @@ function	validateDOB(date) {
 	return (valid);
 }
 
-// regex check for number of previous entries
+// Regex check for number of previous entries
 function	validateNumEntries(entries) {
 	return numRgx.test(entries);
 }
