@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title>Reservation</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<link rel="stylesheet" href="modal.css" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="modal.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link
 				href="https://fonts.googleapis.com/css?family=DM+Sans"
-				rel="stylesheet"
-				/>
+				rel="stylesheet">
 	</head>
 	<body>
 		<div class="topnav" id="myTopnav">
 			<div class="header-logo">
-				<img alt="logo" src="Logo.png" width="auto" height="auto" />
+				<img alt="logo" src="Logo.png">
 			</div>
 			<nav class="main-navbar">
 				<a href="javascript:void(0);" class="icon" onclick="editNav()">
 					<i class="fa fa-bars"></i>
 				</a>
 				<ul>
-					<a href="#"><li><span>Détails de l'évènement</span></li></a>
-					<a href="#"><li><span>À propos</span></li></a>
-					<a href="#"><li><span>Contact</span></li></a>
-					<a href="#"><li><span>Évènements passés</span></li></a>
+					<li><a href="#">Détails de l'évènement</a></li>
+					<li><a href="#">À propos</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Évènements passés</a></li>
 				</ul>
 			</nav>
-		</div>
 		</div>
 		<main>
 			<section class="hero-section">
@@ -45,7 +43,7 @@
 					</button>
 				</div>
 				<div class="hero-img">
-					<img src="./bg_img.jpg" alt="img" />
+					<img src="./bg_img.jpg" alt="Hero image">
 				</div>
 				<button class="btn-signup modal-btn">
 					je m'inscris
@@ -70,7 +68,7 @@
 											id="first"
 											name="first"
 											minlength="2"
-											/><br>
+											><br>
 								</div>
 								<div
 										class="formData" data-showerror="false" data-error="Merci d'entrer un nom d'au moins 2 caractères">
@@ -80,7 +78,7 @@
 											type="text"
 											id="last"
 											name="last"
-											/><br>
+											><br>
 								</div>
 								<div
 										class="formData" data-showerror="false" data-error="Merci d'entrer une adresse email valide">
@@ -90,7 +88,7 @@
 											type="email"
 											id="email"
 											name="email"
-											/><br>
+											><br>
 								</div>
 								<div
 										class="formData" data-showerror="false" data-error="Merci d'entrer une date de naissance valide">
@@ -100,7 +98,7 @@
 											type="date"
 											id="birthdate"
 											name="birthdate"
-											/><br>
+											><br>
 								</div>
 								<div
 										class="formData" data-showerror="false" data-error="Merci d'indiquer un nombre compris entre 0 et 99">
@@ -116,7 +114,7 @@
 										   id="location1"
 										   name="location"
 										   value="New York"
-										   />
+										   >
 									<label class="radio-label" for="location1">
 										<span class="radio-icon"></span>
 										New York</label
@@ -127,7 +125,7 @@
 											id="location2"
 											name="location"
 											value="San Francisco"
-											/>
+											>
 									<label class="radio-label" for="location2">
 										<span class="radio-icon"></span>
 										San Francisco</label
@@ -138,7 +136,7 @@
 											id="location3"
 											name="location"
 											value="Seattle"
-											/>
+											>
 									<label class="radio-label" for="location3">
 										<span class="radio-icon"></span>
 										Seattle</label
@@ -149,7 +147,7 @@
 											id="location4"
 											name="location"
 											value="Chicago"
-											/>
+											>
 									<label class="radio-label" for="location4">
 										<span class="radio-icon"></span>
 										Chicago</label
@@ -160,7 +158,7 @@
 											id="location5"
 											name="location"
 											value="Boston"
-											/>
+											>
 									<label class="radio-label" for="location5">
 										<span class="radio-icon"></span>
 										Boston</label
@@ -171,7 +169,7 @@
 											id="location6"
 											name="location"
 											value="Portland"
-											/>
+											>
 									<label class="radio-label" for="location6">
 										<span class="radio-icon"></span>
 										Portland</label
@@ -186,13 +184,13 @@
 											id="checkbox1"
 											name="terms"
 											checked
-											/>
-									<label class="checkbox-label" for="checkbox1" required>
+											>
+									<label class="checkbox-label" for="checkbox1">
 										<span class="checkbox-icon"></span>
 										J'ai lu et accepté les conditions d'utilisation.
 									</label>
 									<br>
-									<input class="checkbox-input" type="checkbox" id="checkbox2" />
+									<input class="checkbox-input" type="checkbox" id="checkbox2" >
 									<label class="checkbox-label" for="checkbox2">
 										<span class="checkbox-icon"></span>
 										Je souhaite être prévenu des prochains évènements.
@@ -200,11 +198,10 @@
 									<br>
 								</div>
 								<input
-										class="btn-submit"
+										class="button btn-submit"
 										type="submit"
-										class="button"
 										value="C'est parti"
-										/>
+										>
 						</form>
 					</div>
 					<div class="submitted">
