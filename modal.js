@@ -63,7 +63,6 @@ formData.forEach(formInput => {
 
 // On submit, the form is checked for validation, and this calls most of the subprocessess
 formElem.addEventListener("submit", function(event) {
-	//	validate();
 	event.preventDefault();
 	if (submittedAlready) {
 		validate();
@@ -102,10 +101,7 @@ function validate() {
 	const submittedClose = document.querySelector(".button.closeModal");
 	const submitted = document.querySelector(".submitted");
 	const thanks = document.querySelector(".thanks");
-	const	modalBody = document.querySelector(".modal-body");
 	let modalHeight = contentModal.scrollHeight;
-	let offsetX = modalSubmitBtn.offsetLeft;
-	let offsetY = modalSubmitBtn.offsetTop;
 	contentModal.style.display = "flex";
 	contentModal.style.justifyContent = "end";
 	submitted.style.display = "flex";
