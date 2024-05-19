@@ -41,9 +41,6 @@ function closeModal() {
 formData.forEach(formInput => {
 	formInput.addEventListener("change", (event) => {
 		let validForm = true;
-		if (validForm === false) {
-			return;
-		}
 		let input = formInput.querySelector('input');
 		let inputType = input.getAttribute("name");
 		if (inputType == "location") {
@@ -98,7 +95,6 @@ formElem.addEventListener("submit", function(event) {
 // Confirms to the user that his form is valid and he's good to go, also tweaks modal size
 function validate() {
 	const contentModal = document.querySelector(".content");
-	const submittedClose = document.querySelector(".button.closeModal");
 	const submitted = document.querySelector(".submitted");
 	const thanks = document.querySelector(".thanks");
 	let modalHeight = contentModal.scrollHeight;
