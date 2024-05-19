@@ -12,11 +12,13 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const inputText = document.querySelectorAll(".text-control");
 const formElem = document.querySelector("form[name='reserve']");
 const modalExitBtn = document.querySelectorAll(".closeModal");
 const modalSubmitBtn = document.querySelector(".btn-submit");
 const modalForm = document.querySelector("form");
 const modalSubmitted = document.querySelector(".submitted");
+const radiosInputs = document.querySelectorAll(".radio-input");
 
 // Flag variable to track if form has been submitted already
 let submittedAlready = false;
@@ -35,7 +37,22 @@ modalExitBtn.forEach((btn) => btn.addEventListener("click", closeModal));
 // Close modal function 
 function closeModal() {
 	modalbg.style.display = "none";
+	cleanupModal();
 }
+
+//Cleans up the modal if the user closes it manually
+function cleanupModal() {
+	inputText.forEach(input => {
+		input.value = "";
+	})
+	formData.forEach(input => {
+		input.dataset.showerror = false;
+	})
+	radiosInputs.forEach(radio => {
+		radio.checked = false;
+	})
+}
+
 
 // Makes sure that form displays warning for invalid inputs as they're first entered by user
 formData.forEach(formInput => {
